@@ -1,5 +1,6 @@
 import turtle as t
 
+t.right(30)
 def triangle(size):
     for i in range(3):
         t.forward(size)
