@@ -11,3 +11,6 @@ print(visitable(circle))
 
 circle = [1, 2, 4, 3]
 print(visitable(circle))
+
+circle = [1, 3, 2, 4]
+print(visitable(circle))

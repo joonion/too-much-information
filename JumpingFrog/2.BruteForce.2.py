@@ -15,4 +15,4 @@ for i in range(len(perms)):
     print(perms[i])
     circle = [1] + list(perms[i])
     if visitable(circle[:]):
-        print(circle)
+        print("solution:", circle)
