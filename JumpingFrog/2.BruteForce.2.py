@@ -8,11 +8,10 @@ def visitable(circle):
 
 from itertools import permutations
 
-n = 4
+n = 12
 nums = [i for i in range(2, n + 1)]
 perms = list(permutations(nums))
 for i in range(len(perms)):
-    print(perms[i])
     circle = [1] + list(perms[i])
     if visitable(circle[:]):
         print("solution:", circle)
