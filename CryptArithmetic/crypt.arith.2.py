@@ -1,9 +1,5 @@
 from itertools import permutations 
-w1, w2, w3 = "SEND", "MORE", "MONEY"
-letters = sorted(set(w1 + w2 + w3))
-digits = list(range(10))
-print(letters, digits)
-perms = list(permutations(digits, len(letters)))
+from time import time
 
 def to_int(revstr, map):
     value = 0
@@ -12,15 +8,33 @@ def to_int(revstr, map):
     return value
 
 def is_valid(w1, w2, w3, map):
-    leadings = [map[w1[0]], map[w2[0]], map[w3[0]]]
+    leadings = [map[w1[0]], map[w2[0]],map[w3[0]]]
     if 0 in leadings:
         return False
     a = to_int(w1[::-1], map)
     b = to_int(w2[::-1], map)
     c = to_int(w3[::-1], map)
     return a + b == c
+    
+def solve(w1, w2, w3):
+    solutions = []
+    letters = sorted(set(w1 + w2 + w3))
+    digits = list(range(10))
+    perms = list(permutations(digits, len(letters)))
+    for perm in perms:
+        map = {k:v for k, v in zip(letters, perm)}
+        if is_valid(w1, w2, w3, map):
+            solutions.append(map.copy())
+    return solutions
 
-for perm in perms:
-    map = {k:v for k, v in zip(letters, perm)}
-    if is_valid(w1, w2, w3, map):
-        print(map)
+w1, w2, w3 = input("단어를 입력하시오:").split()
+start = time()
+solutions = solve(w1, w2, w3)
+print("찾은 해답의 수:", len(solutions))
+print("걸린 시간:", time() - start)
+for map in solutions:
+    print(w1, to_int(w1[::-1], map))
+    print(w2, to_int(w2[::-1], map))
+    print(w3, to_int(w3[::-1], map))
+    
+    
