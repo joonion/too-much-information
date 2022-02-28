@@ -8,6 +8,7 @@ import random
 pops = [i for i in range(10, 100)]
 nums = random.sample(pops, 10)
 simplest_sort(nums)
+print(nums)
 if nums == sorted(nums):
     print("SORTED!")
 else:
