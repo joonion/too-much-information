@@ -38,7 +38,7 @@ def partition(M):
     n, m = len(M), len(M) // 2
     M11 = [[M[i][j] for j in range(m)] for i in range(m)]
     M12 = [[M[i][j] for j in range(m, n)] for i in range(m)]
-    M21 = [[M[i][j] for j in range(n)] for i in range(m, n)]
+    M21 = [[M[i][j] for j in range(m)] for i in range(m, n)]
     M22 = [[M[i][j] for j in range(m, n)] for i in range(m, n)]
     return M11, M12, M21, M22
 
