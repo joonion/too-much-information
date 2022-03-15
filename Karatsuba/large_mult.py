@@ -17,7 +17,7 @@ def large_mult(u, v):
         p1, p2 = large_mult(x, w), large_mult(x, z)
         p3, p4 = large_mult(w, y), large_mult(y, z)
         return p1*(10**(2*m)) + (p2 + p3)*(10**m) + p4
-        
+
 u, v = map(int, input().split())
 print(u*v)
 uv = large_mult(u, v)
