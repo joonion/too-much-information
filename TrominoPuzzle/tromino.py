@@ -5,6 +5,12 @@
 # a tromino is shown with L-shaped n which is the size of board 
 # when a recursive function is called.
 
+def print_board(board):
+    for i in range(n):
+        for j in range(n):
+            print(board[i][j], end = " ")
+        print()
+
 def whereis(n, srow, scol, row, col):
     m = n // 2
     if row - srow < m:
@@ -24,7 +30,7 @@ def hole(part, where, n, srow, scol, row, col):
         row, col = srow + m - 1, scol + m - 1
         if part == 2 or part == 4: col += 1
         if part == 3 or part == 4: row += 1
-    return row, col;
+    return row, col
 
 def tromino(n, board, srow, scol, row, col):
     where = whereis(n, srow, scol, row, col)
@@ -42,13 +48,8 @@ def tromino(n, board, srow, scol, row, col):
         hrow, hcol = hole(4, where, n, srow, scol, row, col)
         tromino(m, board, srow+m, scol+m, hrow, hcol)
 
-T = int(input())
-for i in range(T):
-    n, row, col = map(int, input().split())
-    board = [[0 for _ in range(n)] for _ in range(n)]
-    srow, scol = 0, 0
-    tromino(n, board, srow, scol, row, col)
-    print(n, row, col)
-    for i in range(len(board)):
-        print("\t", board[i])
-
+n, row, col = map(int, input().split())
+board = [[0 for _ in range(n)] for _ in range(n)]
+srow, scol = 0, 0
+tromino(n, board, srow, scol, row, col)
+print_board(board);
