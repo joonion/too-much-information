@@ -1,4 +1,4 @@
-public class CallByReference6 {
+public class CallByReference8 {
 
     public void swap(int x, int y) {
         int t = x;
@@ -8,7 +8,7 @@ public class CallByReference6 {
     }
 
     public static void main(String[] args) {
-        CallByReference6 obj = new CallByReference6();
+        CallByReference8 obj = new CallByReference8();
         int x = 10, y = 20;
 
         System.out.println("Before swap(): " + x + " " + y);

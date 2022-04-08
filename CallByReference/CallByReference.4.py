@@ -1,7 +1,5 @@
 def swap(x, y):
-    t = x
-    x = y
-    y = t
+    x, y = y, x
     print("Inside swap():", x, y)
     
 x, y = 10, 20

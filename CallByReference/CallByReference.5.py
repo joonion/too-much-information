@@ -3,5 +3,5 @@ def swap(x, y):
     
 x, y = 10, 20
 print("Before swap():", x, y)
-x, y = swap(x, y)
+x, y = y, x
 print("After swap():", x, y)

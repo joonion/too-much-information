@@ -1,4 +1,4 @@
-public class CallByReference7 {
+public class CallByReference9 {
 
     public void swap(int[] arr, int x, int y) {
         int t = arr[x];
@@ -8,7 +8,7 @@ public class CallByReference7 {
     }
 
     public static void main(String[] args) {
-        CallByReference7 obj = new CallByReference7();
+        CallByReference9 obj = new CallByReference9();
         int[] arr = {10, 20};
         int x = 0, y = 1;
 
