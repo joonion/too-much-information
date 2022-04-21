@@ -8,6 +8,6 @@ def perm(n, S):
             C += perm(i, P) * perm(n - i - 1, Q)
         return C
     
-S = list("A")
+S = list("ABCDEF")
 C = perm(len(S), S)
 print(C)

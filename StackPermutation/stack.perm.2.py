@@ -18,7 +18,7 @@ def perm(n, S):
                         R.append(S[i] + p + q)
         return R
     
-S = list("ABC")
+S = list("ABCDEFG")
 R = perm(len(S), S)
 for r in R:
     print(r)
