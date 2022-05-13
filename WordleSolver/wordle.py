@@ -1,14 +1,14 @@
-# Does word include every characters in s?
-def check_includes(word, s):
-    for c in s:
-        if c not in word:
-            return False
-    return True
-
 # Does word exclude every characters in s?
 def check_excludes(word, s):
     for c in s:
         if c in word:
+            return False
+    return True
+
+# Does word include every characters in s?
+def check_includes(word, s):
+    for c in s:
+        if c not in word:
             return False
     return True
 
@@ -25,11 +25,11 @@ with open('words_with_five_chars.txt', 'r') as f:
     reads = f.readlines()
     for word in reads:
         words.append(word.strip())
-    
+
 # Prepare the constraints you have found
-positions = {1:'E'} # characters of which the position has been found
 includes = 'ALT'    # characters that should be included
-excludes = 'CRND'   # characters that should be excluded
+excludes = 'DSP'    # characters that should be excluded
+positions = {1:'E'} # characters of which the position has been found
 
 # Check the constraints you have been found
 recommend = []
