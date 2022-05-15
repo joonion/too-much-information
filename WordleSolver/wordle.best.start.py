@@ -4,23 +4,23 @@ with open('words_with_five_chars.txt', 'r') as f:
     for word in reads:
         words.append(word.strip())
         
-freq = [[0] * 26 for _ in range(5)]
+freq = [0] * 26
 for word in words:
     for i in range(len(word)):
         alpha = ord(word[i]) - ord('A')
-        freq[i][alpha] += 1
-        
-# for f in freq:
-#     print(f)
+        freq[alpha] += 1
+# print(freq)
 
 prob = {}
 for word in words:
-    psum = 1
-    for i in range(len(word)):
+    chars = list(set(list(word)))
+    prod = 1
+    for i in range(len(chars)):
         alpha = ord(word[i]) - ord('A')
-        psum *= freq[i][alpha]
-    prob[word] = psum
-    
+        prod *= freq[alpha]
+    prob[word] = prod
+# print(prob)
+
 largest = max(prob, key = prob.get)
 print(largest, prob[largest])
 
@@ -30,7 +30,27 @@ print(test, prob[test])
 test = "DEALT"
 print(test, prob[test])
 
-# for k, v in prob.items():
-#     if v > 3566532742498232:
-#         print(k, v)
+test = "ALIEN"
+print(test, prob[test])
+
+test = "TESLA"
+print(test, prob[test])
+
+test = "TEARS"
+print(test, prob[test])
+
+test = "RAISE"
+print(test, prob[test])
+
+test = "ARISE"
+print(test, prob[test])
+
+test = "AROSE"
+print(test, prob[test])
+
+best = "RAISE"
+print("==> Better than", best)
+for k, v in prob.items():
+    if v > prob[best]:
+        print(k, v)
             
